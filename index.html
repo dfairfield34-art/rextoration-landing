@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rextoration | 24/7 Emergency Restoration Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2B7DE9;
+            --bright-blue: #1E5FD9;
+            --green-wave: #7FBF3F;
+            --accent-orange: #FF6B35;
+            --dark-bg: #0A0E27;
+            --card-bg: #1A1F3A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0AEC0;
+            --gradient-start: #1A1F3A;
+            --gradient-end: #0A0E27;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Particles */
+        .particle-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 20s infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-100px) translateX(50px); }
+            50% { transform: translateY(-200px) translateX(-50px); }
+            75% { transform: translateY(-100px) translateX(100px); }
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            z-index: 10;
+            padding: 3rem 5% 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: clamp(4rem, 15vw, 10rem);
+            font-weight: 900;
+            letter-spacing: -3px;
+            color: #FFFFFF;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-shadow: 0 0 40px rgba(255, 107, 53, 0.6);
+            filter: drop-shadow(0 10px 30px rgba(255, 107, 53, 0.4));
+            cursor: default;
+            user-select: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo:hover {
+            letter-spacing: 8px;
+            text-shadow: 0 0 60px rgba(255, 107, 53, 0.9);
+            filter: drop-shadow(0 20px 60px rgba(255, 107, 53, 0.7));
+        }
+
+        .logo-subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.4rem);
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        header:hover .logo-subtitle {
+            color: var(--accent-orange);
+            opacity: 1;
+            letter-spacing: 6px;
+        }
+
+        .emergency-badge {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--bright-blue) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 8px 30px rgba(43, 125, 233, 0.5);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: fixed;
+            overflow: hidden;
+        }
+
+        .emergency-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { left: -100%; }
+            50% { left: 100%; }
+        }
+
+        .emergency-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(43, 125, 233, 0.7);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 5;
+            padding: 6rem 5% 6rem;
+            text-align: center;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            letter-spacing: 1px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--primary-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 4rem;
+            letter-spacing: 0.5px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Phone CTA */
+        .phone-cta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 5rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .phone-number {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 300;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 2.5rem;
+            background: rgba(26, 31, 58, 0.4);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            border-radius: 8px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            letter-spacing: 1px;
+        }
+
+        .phone-number::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.2), transparent);
+            transition: left 0.8s;
+        }
+
+        .phone-number:hover::before {
+            left: 100%;
+        }
+
+        .phone-number:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-orange);
+            box-shadow: 0 20px 80px rgba(255, 107, 53, 0.5);
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .phone-icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .phone-number:hover .phone-icon {
+            transform: scale(1.1);
+        }
+
+        /* Services Grid */
+        .services {
+            position: relative;
+            z-index: 5;
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-orange);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 107, 53, 0.5);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 107, 53, 0.1) 100%);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Email Signup Section */
+        .signup-section {
+            position: relative;
+            z-index: 5;
+            padding: 5rem 5%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .signup-section h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .signup-section p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .email-input,
+        .message-input {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            border: 2px solid rgba(255, 107, 53, 0.2);
+            border-radius: 12px;
+            background: rgba(26, 31, 58, 0.6);
+            color: var(--text-primary);
+            outline: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .message-input {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .email-input::placeholder,
+        .message-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .email-input:focus,
+        .message-input:focus {
+            border-color: var(--accent-orange);
+            background: rgba(26, 31, 58, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.5rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #FF8C5A 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(255, 107, 53, 0.6);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .social-link:hover {
+            background: var(--accent-orange);
+            border-color: transparent;
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 5;
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 5rem;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 5%;
+            }
+
+            .logo {
+                font-size: clamp(2.5rem, 15vw, 4rem);
+                letter-spacing: -2px;
+            }
+
+            .logo-subtitle {
+                font-size: clamp(0.7rem, 3vw, 1rem);
+                letter-spacing: 2px;
+            }
+
+            header:hover .logo-subtitle {
+                letter-spacing: 3px;
+            }
+
+            .emergency-badge {
+                font-size: 0.65rem;
+                padding: 0.75rem 1.2rem;
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .hero {
+                padding: 4rem 5% 3rem;
+            }
+
+            .phone-cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .phone-number {
+                font-size: 1.4rem;
+                padding: 1.2rem 2rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .email-input,
+            .message-input,
+            .submit-btn {
+                width: 100%;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #48BB78 0%, #38A169 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="particle-bg" id="particleBg"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">REXTORATION</div>
+        <div class="logo-subtitle">24/7 Emergency Restoration Company</div>
+        <div class="emergency-badge">24/7 EMERGENCY SERVICE</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Swift, Reliable Recovery from Disaster</h1>
+        <p class="subtitle">IICRC CERTIFIED • 90 MINUTE RESPONSE TIME</p>
+        <p class="tagline">When you need it clean, call in the team.</p>
+        
+        <div class="phone-cta">
+            <a href="tel:4085284780" class="phone-number">
+                <svg class="phone-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>
+                408.528.4780
+            </a>
+            <a href="tel:2095426261" class="phone-number">
+                <svg class="phone-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>
+                209.542.6261
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Emergency Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔥</div>
+                <h3>Fire & Smoke Damage</h3>
+                <p>IICRC certified rapid response to fire emergencies with professional smoke damage restoration and odor removal.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💧</div>
+                <h3>Water Extraction</h3>
+                <p>24/7 water damage response with industrial-grade extraction and structural drying equipment. Works with all home insurance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌊</div>
+                <h3>Flood & Natural Disasters</h3>
+                <p>Expert recovery from floods and natural disasters with a 90 minute or less response time.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Complete Restoration</h3>
+                <p>Full-service restoration from emergency response through final repairs. Licensed, insured, and certified.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Quote Section -->
+    <section class="signup-section">
+        <h2>Get a Free Quote</h2>
+        <p>24/7 emergency response. Contact us now for immediate assistance or a free restoration quote.</p>
+        
+        <form class="email-form" id="contactForm" action="mailto:Oakdalebud81@gmail.com" method="post" enctype="text/plain">
+            <input 
+                type="text" 
+                name="name"
+                class="email-input" 
+                placeholder="Your name"
+                required
+                id="nameInput"
+            >
+            <input 
+                type="email" 
+                name="email"
+                class="email-input" 
+                placeholder="Your email address"
+                required
+                id="emailInput"
+            >
+            <input 
+                type="tel" 
+                name="phone"
+                class="email-input" 
+                placeholder="Your phone number"
+                required
+                id="phoneInput"
+            >
+            <textarea 
+                name="message"
+                class="message-input" 
+                placeholder="Describe your restoration needs..."
+                rows="4"
+                required
+                id="messageInput"
+            ></textarea>
+            <button type="submit" class="submit-btn">
+                <span>Get Free Quote</span>
+            </button>
+        </form>
+        
+        <div class="success-message" id="successMessage">
+            ✓ Thank you! We'll contact you shortly for your free quote.
+        </div>
+
+        <div class="social-links">
+            <a href="https://instagram.com/rextoration" class="social-link" target="_blank" aria-label="Instagram">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="https://facebook.com/rextoration" class="social-link" target="_blank" aria-label="Facebook">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Rextoration. All rights reserved.</p>
+        <p>Licensed, Insured & Certified | Serving the Bay Area</p>
+        <p style="margin-top: 1rem;">Website by <a href="https://derekfairfield.com" target="_blank">Derek Fairfield</a></p>
+    </footer>
+
+    <script>
+        // Create animated background particles
+        function createParticles() {
+            const particleBg = document.getElementById('particleBg');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 100 + 50;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.background = Math.random() > 0.5 
+                    ? 'radial-gradient(circle, rgba(43, 125, 233, 0.3), transparent)'
+                    : 'radial-gradient(circle, rgba(127, 191, 63, 0.3), transparent)';
+                
+                particleBg.appendChild(particle);
+            }
+        }
+
+        // Initialize particles on load
+        window.addEventListener('load', createParticles);
+    </script>
+</body>
+</html>      
