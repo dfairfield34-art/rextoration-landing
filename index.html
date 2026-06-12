@@ -3,8 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rextoration | 24/7 Emergency Restoration Services</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Rextoration | 24/7 Emergency Water, Fire & Flood Damage Restoration — Bay Area & Central Valley</title>
+    <meta name="description" content="24/7 emergency restoration in the Bay Area & Central Valley. IICRC-certified fire, smoke, water & flood damage recovery with a 90-minute response time. Licensed & insured. Call 408.528.4780.">
+    <link rel="canonical" href="https://rextoration.info/">
+    <meta name="theme-color" content="#0A0E27">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rextoration.info/">
+    <meta property="og:title" content="Rextoration | 24/7 Emergency Restoration — 90-Minute Response">
+    <meta property="og:description" content="IICRC-certified fire, smoke, water & flood damage restoration. Serving the Bay Area & Central Valley, 24/7. Licensed & insured.">
+    <meta property="og:image" content="https://rextoration.info/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rextoration | 24/7 Emergency Restoration — 90-Minute Response">
+    <meta name="twitter:description" content="IICRC-certified fire, smoke, water & flood damage restoration. Bay Area & Central Valley. Licensed & insured.">
+    <meta name="twitter:image" content="https://rextoration.info/og-image.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Structured data: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://rextoration.info/#business",
+      "name": "Rextoration",
+      "url": "https://rextoration.info/",
+      "description": "24/7 emergency restoration company providing IICRC-certified fire, smoke, water and flood damage recovery with a 90-minute response time.",
+      "telephone": "+1-408-528-4780",
+      "priceRange": "Free quotes",
+      "areaServed": [
+        { "@type": "Place", "name": "San Francisco Bay Area" },
+        { "@type": "Place", "name": "California Central Valley" }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://instagram.com/rextoration",
+        "https://facebook.com/rextoration"
+      ],
+      "knowsAbout": ["Water damage restoration","Fire damage restoration","Smoke damage restoration","Flood recovery","Emergency mitigation"]
+    }
+    </script>
+
+    <!-- Structured data: FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How fast can Rextoration respond to an emergency?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We answer 24/7 and target an on-site response of 90 minutes or less for emergencies in our service area." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with homeowners insurance?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with all home insurance carriers and document the damage thoroughly to support your claim." }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you serve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We serve the San Francisco Bay Area and California's Central Valley, 24 hours a day, 7 days a week." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you licensed and certified?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rextoration is licensed, insured, and IICRC certified for professional restoration work." }
+        }
+      ]
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -17,10 +98,11 @@
             --bright-blue: #1E5FD9;
             --green-wave: #7FBF3F;
             --accent-orange: #FF6B35;
+            --accent-red: #E9452B;
             --dark-bg: #0A0E27;
             --card-bg: #1A1F3A;
             --text-primary: #FFFFFF;
-            --text-secondary: #A0AEC0;
+            --text-secondary: #A8B2C7;
             --gradient-start: #1A1F3A;
             --gradient-end: #0A0E27;
         }
@@ -31,6 +113,36 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -60px;
+            left: 1rem;
+            z-index: 2000;
+            background: var(--accent-orange);
+            color: #fff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0 0 8px 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
 
         /* Animated Background Particles */
@@ -71,7 +183,7 @@
         }
 
         .logo {
-            font-size: clamp(4rem, 15vw, 10rem);
+            font-size: clamp(3.2rem, 13vw, 9rem);
             font-weight: 900;
             letter-spacing: -3px;
             color: #FFFFFF;
@@ -97,6 +209,7 @@
             color: var(--text-secondary);
             opacity: 0.9;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         header:hover .logo-subtitle {
@@ -105,23 +218,27 @@
             letter-spacing: 6px;
         }
 
+        /* Floating call button */
         .emergency-badge {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
             z-index: 1000;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--bright-blue) 100%);
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-red) 100%);
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 4px;
+            padding: 1rem 1.75rem;
+            border-radius: 999px;
             font-weight: 700;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            box-shadow: 0 8px 30px rgba(43, 125, 233, 0.5);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: fixed;
+            border: 1px solid rgba(255, 255, 255, 0.25);
             overflow: hidden;
         }
 
@@ -141,16 +258,23 @@
             50% { left: 100%; }
         }
 
-        .emergency-badge:hover {
+        .emergency-badge:hover,
+        .emergency-badge:focus {
             transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(43, 125, 233, 0.7);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.7);
+        }
+
+        .emergency-badge svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
         }
 
         /* Hero Section */
         .hero {
             position: relative;
             z-index: 5;
-            padding: 6rem 5% 6rem;
+            padding: 5rem 5% 5rem;
             text-align: center;
             max-width: 1600px;
             margin: 0 auto;
@@ -167,7 +291,7 @@
         }
 
         .hero .subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
             color: var(--text-secondary);
             margin-bottom: 0.5rem;
             font-weight: 300;
@@ -178,13 +302,13 @@
 
         .hero .tagline {
             font-size: clamp(1.3rem, 3vw, 2rem);
-            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--primary-red) 100%);
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-red) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 600;
             font-style: italic;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             letter-spacing: 0.5px;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
@@ -200,24 +324,59 @@
             }
         }
 
+        /* Trust chips */
+        .trust-chips {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3.5rem;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .trust-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            background: rgba(26, 31, 58, 0.5);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+        }
+
+        .trust-chip .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green-wave);
+            box-shadow: 0 0 10px rgba(127, 191, 63, 0.8);
+        }
+
         /* Phone CTA */
         .phone-cta {
             display: flex;
             gap: 2rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 5rem;
+            margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
         .phone-number {
-            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-size: clamp(1.6rem, 4vw, 2.6rem);
             font-weight: 300;
             color: var(--text-primary);
             text-decoration: none;
             display: inline-flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            gap: 0.35rem;
             padding: 1.5rem 2.5rem;
             background: rgba(26, 31, 58, 0.4);
             border: 2px solid rgba(255, 107, 53, 0.3);
@@ -228,6 +387,20 @@
             overflow: hidden;
             backdrop-filter: blur(20px);
             letter-spacing: 1px;
+        }
+
+        .phone-number .number-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .phone-number .region {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent-orange);
         }
 
         .phone-number::before {
@@ -245,7 +418,8 @@
             left: 100%;
         }
 
-        .phone-number:hover {
+        .phone-number:hover,
+        .phone-number:focus {
             transform: translateY(-8px);
             border-color: var(--accent-orange);
             box-shadow: 0 20px 80px rgba(255, 107, 53, 0.5);
@@ -253,8 +427,8 @@
         }
 
         .phone-icon {
-            width: 40px;
-            height: 40px;
+            width: 34px;
+            height: 34px;
             transition: transform 0.3s ease;
         }
 
@@ -262,27 +436,54 @@
             transform: scale(1.1);
         }
 
-        /* Services Grid */
-        .services {
+        .hero-note {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+
+        .hero-note a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .hero-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* Shared section styles */
+        section {
             position: relative;
             z-index: 5;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 640px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Services Grid */
+        .services {
             padding: 4rem 5%;
             max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .services h2 {
-            text-align: center;
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 3rem;
-            font-weight: 700;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-bottom: 5rem;
         }
 
         .service-card {
@@ -341,26 +542,170 @@
             line-height: 1.8;
         }
 
-        /* Email Signup Section */
-        .signup-section {
-            position: relative;
-            z-index: 5;
-            padding: 5rem 5%;
-            max-width: 800px;
+        /* Process Section */
+        .process {
+            padding: 4rem 5%;
+            max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
         }
 
-        .signup-section h2 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 1rem;
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            counter-reset: step;
+        }
+
+        .process-step {
+            background: rgba(26, 31, 58, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem 1.75rem;
+            position: relative;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            border-color: rgba(43, 125, 233, 0.6);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--bright-blue) 100%);
+            font-weight: 900;
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 6px 20px rgba(43, 125, 233, 0.4);
+        }
+
+        .process-step h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
             font-weight: 700;
         }
 
-        .signup-section p {
+        .process-step p {
             color: var(--text-secondary);
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Insurance band */
+        .insurance {
+            padding: 4rem 5%;
+        }
+
+        .insurance-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(43, 125, 233, 0.15) 0%, rgba(26, 31, 58, 0.8) 100%);
+            border: 1px solid rgba(43, 125, 233, 0.35);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .insurance-inner h2 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .insurance-inner p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 1.75rem;
+        }
+
+        .insurance-inner .cta-row a {
+            display: inline-block;
+            padding: 1rem 2.25rem;
+            border-radius: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.95rem;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--bright-blue) 100%);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(43, 125, 233, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .insurance-inner .cta-row a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(43, 125, 233, 0.6);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 4rem 5%;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .faq details {
+            background: rgba(26, 31, 58, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq details[open] {
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        .faq summary {
+            cursor: pointer;
+            padding: 1.4rem 1.6rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .faq summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq summary::after {
+            content: '+';
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--accent-orange);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq details p {
+            padding: 0 1.6rem 1.4rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Quote Section */
+        .signup-section {
+            padding: 4rem 5% 5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .email-form {
@@ -369,6 +714,7 @@
             gap: 1rem;
             max-width: 700px;
             margin: 0 auto 3rem;
+            text-align: left;
         }
 
         .email-input,
@@ -440,13 +786,33 @@
             height: 400px;
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover:not(:disabled) {
             transform: translateY(-3px);
             box-shadow: 0 15px 50px rgba(255, 107, 53, 0.6);
         }
 
         .submit-btn:active {
             transform: translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        .form-note {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Honeypot — hidden from humans, visible to bots */
+        .hp-field {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
         }
 
         /* Social Links */
@@ -472,7 +838,8 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .social-link:hover {
+        .social-link:hover,
+        .social-link:focus {
             background: var(--accent-orange);
             border-color: transparent;
             transform: translateY(-5px) rotate(360deg);
@@ -483,10 +850,10 @@
         footer {
             position: relative;
             z-index: 5;
-            padding: 3rem 5%;
+            padding: 3rem 5% 6rem;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 5rem;
+            margin-top: 3rem;
         }
 
         footer p {
@@ -501,71 +868,29 @@
         }
 
         footer a:hover {
-            color: var(--primary-red);
+            color: var(--accent-red);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                padding: 2rem 5%;
-            }
-
-            .logo {
-                font-size: clamp(2.5rem, 15vw, 4rem);
-                letter-spacing: -2px;
-            }
-
-            .logo-subtitle {
-                font-size: clamp(0.7rem, 3vw, 1rem);
-                letter-spacing: 2px;
-            }
-
-            header:hover .logo-subtitle {
-                letter-spacing: 3px;
-            }
-
-            .emergency-badge {
-                font-size: 0.65rem;
-                padding: 0.75rem 1.2rem;
-                bottom: 1rem;
-                right: 1rem;
-            }
-
-            .hero {
-                padding: 4rem 5% 3rem;
-            }
-
-            .phone-cta {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .phone-number {
-                font-size: 1.4rem;
-                padding: 1.2rem 2rem;
-                width: 100%;
-                justify-content: center;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .email-input,
-            .message-input,
-            .submit-btn {
-                width: 100%;
-            }
-        }
-
-        /* Success Message */
+        /* Success / error messages */
         .success-message {
             display: none;
             background: linear-gradient(135deg, #48BB78 0%, #38A169 100%);
             color: white;
             padding: 1rem 2rem;
             border-radius: 10px;
-            margin-top: 1rem;
+            margin: 1rem auto 0;
+            max-width: 700px;
+            animation: slideIn 0.5s ease;
+        }
+
+        .error-message {
+            display: none;
+            background: linear-gradient(135deg, #E9452B 0%, #C53030 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin: 1rem auto 0;
+            max-width: 700px;
             animation: slideIn 0.5s ease;
         }
 
@@ -580,165 +905,376 @@
             }
         }
 
-        .success-message.show {
+        .success-message.show,
+        .error-message.show {
             display: block;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .particle {
+                display: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 5%;
+            }
+
+            .logo {
+                font-size: clamp(2.5rem, 14vw, 4rem);
+                letter-spacing: -2px;
+            }
+
+            .logo-subtitle {
+                font-size: clamp(0.7rem, 3vw, 1rem);
+                letter-spacing: 2px;
+            }
+
+            header:hover .logo-subtitle {
+                letter-spacing: 3px;
+            }
+
+            .emergency-badge {
+                font-size: 0.75rem;
+                padding: 0.9rem 1.4rem;
+                bottom: 1rem;
+                right: 1rem;
+                left: 1rem;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 3rem 5% 3rem;
+            }
+
+            .phone-cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .phone-number {
+                font-size: 1.4rem;
+                padding: 1.2rem 2rem;
+                width: 100%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .email-input,
+            .message-input,
+            .submit-btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#quote">Skip to free quote form</a>
+
     <!-- Animated Background -->
-    <div class="particle-bg" id="particleBg"></div>
+    <div class="particle-bg" id="particleBg" aria-hidden="true"></div>
 
     <!-- Header -->
     <header>
-        <div class="logo">REXTORATION</div>
-        <div class="logo-subtitle">24/7 Emergency Restoration Company</div>
-        <div class="emergency-badge">24/7 EMERGENCY SERVICE</div>
+        <p class="logo">REXTORATION</p>
+        <p class="logo-subtitle">24/7 Emergency Restoration Company</p>
     </header>
 
+    <!-- Floating call button -->
+    <a href="tel:+14085284780" class="emergency-badge" aria-label="Call now for 24/7 emergency service">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+        </svg>
+        24/7 Emergency — Call Now
+    </a>
+
     <!-- Hero Section -->
+    <main id="main">
     <section class="hero">
         <h1>Swift, Reliable Recovery from Disaster</h1>
-        <p class="subtitle">IICRC CERTIFIED • 90 MINUTE RESPONSE TIME</p>
+        <p class="subtitle">IICRC Certified &bull; 90 Minute Response Time</p>
         <p class="tagline">When you need it clean, call in the team.</p>
-        
+
+        <div class="trust-chips">
+            <span class="trust-chip"><span class="dot" aria-hidden="true"></span>IICRC Certified</span>
+            <span class="trust-chip"><span class="dot" aria-hidden="true"></span>Licensed &amp; Insured</span>
+            <span class="trust-chip"><span class="dot" aria-hidden="true"></span>90-Min Response</span>
+            <span class="trust-chip"><span class="dot" aria-hidden="true"></span>Works With All Insurance</span>
+        </div>
+
         <div class="phone-cta">
-            <a href="tel:4085284780" class="phone-number">
-                <svg class="phone-icon" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-                </svg>
-                408.528.4780
+            <a href="tel:+14085284780" class="phone-number">
+                <span class="region">Bay Area</span>
+                <span class="number-row">
+                    <svg class="phone-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                    </svg>
+                    408.528.4780
+                </span>
             </a>
-            <a href="tel:2095426261" class="phone-number">
-                <svg class="phone-icon" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-                </svg>
-                209.542.6261
+            <a href="tel:+12095426261" class="phone-number">
+                <span class="region">Central Valley</span>
+                <span class="number-row">
+                    <svg class="phone-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                    </svg>
+                    209.542.6261
+                </span>
             </a>
         </div>
+
+        <p class="hero-note">Not an emergency? <a href="#quote">Request a free quote</a> and we'll get back to you fast.</p>
     </section>
 
     <!-- Services Section -->
-    <section class="services">
-        <h2>Our Emergency Services</h2>
+    <section class="services" aria-labelledby="services-heading">
+        <h2 class="section-heading" id="services-heading">Our Emergency Services</h2>
+        <p class="section-sub">From the first call to final repairs — one certified team handles it all.</p>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">🔥</div>
-                <h3>Fire & Smoke Damage</h3>
+                <div class="service-icon" aria-hidden="true">🔥</div>
+                <h3>Fire &amp; Smoke Damage</h3>
                 <p>IICRC certified rapid response to fire emergencies with professional smoke damage restoration and odor removal.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">💧</div>
+                <div class="service-icon" aria-hidden="true">💧</div>
                 <h3>Water Extraction</h3>
                 <p>24/7 water damage response with industrial-grade extraction and structural drying equipment. Works with all home insurance.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🌊</div>
-                <h3>Flood & Natural Disasters</h3>
+                <div class="service-icon" aria-hidden="true">🌊</div>
+                <h3>Flood &amp; Natural Disasters</h3>
                 <p>Expert recovery from floods and natural disasters with a 90 minute or less response time.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🔧</div>
+                <div class="service-icon" aria-hidden="true">🔧</div>
                 <h3>Complete Restoration</h3>
                 <p>Full-service restoration from emergency response through final repairs. Licensed, insured, and certified.</p>
             </div>
         </div>
     </section>
 
+    <!-- Process Section -->
+    <section class="process" aria-labelledby="process-heading">
+        <h2 class="section-heading" id="process-heading">What Happens When You Call</h2>
+        <p class="section-sub">A clear process, so you know exactly what to expect during a stressful time.</p>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number" aria-hidden="true">1</div>
+                <h3>Call, Any Hour</h3>
+                <p>A real person answers 24/7. Tell us what happened and where you are.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number" aria-hidden="true">2</div>
+                <h3>We're On-Site Fast</h3>
+                <p>Our team targets a 90-minute response to stop the damage from spreading.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number" aria-hidden="true">3</div>
+                <h3>Assess &amp; Document</h3>
+                <p>We assess the damage and document everything to support your insurance claim.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number" aria-hidden="true">4</div>
+                <h3>Restore &amp; Rebuild</h3>
+                <p>From mitigation through final repairs — we don't leave until it's right.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance band -->
+    <section class="insurance" aria-labelledby="insurance-heading">
+        <div class="insurance-inner">
+            <h2 id="insurance-heading">We Work With All Home Insurance Carriers</h2>
+            <p>Dealing with a disaster is hard enough. We document the damage thoroughly and work with your insurance company so the claims process goes as smoothly as possible.</p>
+            <div class="cta-row">
+                <a href="tel:+14085284780">Call Now — It's Free to Ask</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" aria-labelledby="faq-heading">
+        <h2 class="section-heading" id="faq-heading">Common Questions</h2>
+        <p class="section-sub">Quick answers when you need them most.</p>
+        <details>
+            <summary>How fast can you get here?</summary>
+            <p>We answer 24/7 and target an on-site response of 90 minutes or less for emergencies in our service area. The sooner we start, the less the damage spreads.</p>
+        </details>
+        <details>
+            <summary>Do you work with my insurance?</summary>
+            <p>Yes — we work with all home insurance carriers. We document the damage thoroughly and provide the reports your adjuster needs.</p>
+        </details>
+        <details>
+            <summary>What areas do you serve?</summary>
+            <p>We serve the San Francisco Bay Area and California's Central Valley, 24 hours a day, 7 days a week.</p>
+        </details>
+        <details>
+            <summary>Are you licensed and certified?</summary>
+            <p>Yes. Rextoration is licensed, insured, and IICRC certified — the industry standard for professional restoration work.</p>
+        </details>
+        <details>
+            <summary>What should I do while I wait for you to arrive?</summary>
+            <p>Stay safe first — don't enter areas with structural, electrical, or standing-water hazards. If it's safe, shut off the water source or power to affected areas, and take photos for your records. We'll handle the rest when we arrive.</p>
+        </details>
+    </section>
+
     <!-- Contact/Quote Section -->
-    <section class="signup-section">
-        <h2>Get a Free Quote</h2>
-        <p>24/7 emergency response. Contact us now for immediate assistance or a free restoration quote.</p>
-        
-        <form class="email-form" id="contactForm" action="mailto:Oakdalebud81@gmail.com" method="post" enctype="text/plain">
-            <input 
-                type="text" 
+    <section class="signup-section" id="quote" aria-labelledby="quote-heading">
+        <h2 class="section-heading" id="quote-heading">Get a Free Quote</h2>
+        <p class="section-sub">24/7 emergency response. Contact us now for immediate assistance or a free restoration quote.</p>
+
+        <form class="email-form" id="contactForm" action="https://formsubmit.co/Oakdalebud81@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="🚨 New Rextoration Quote Request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://rextoration.info/thanks.html">
+            <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <label class="visually-hidden" for="nameInput">Your name</label>
+            <input
+                type="text"
                 name="name"
-                class="email-input" 
+                class="email-input"
                 placeholder="Your name"
                 required
+                autocomplete="name"
                 id="nameInput"
             >
-            <input 
-                type="email" 
+            <label class="visually-hidden" for="emailInput">Your email address</label>
+            <input
+                type="email"
                 name="email"
-                class="email-input" 
+                class="email-input"
                 placeholder="Your email address"
                 required
+                autocomplete="email"
                 id="emailInput"
             >
-            <input 
-                type="tel" 
+            <label class="visually-hidden" for="phoneInput">Your phone number</label>
+            <input
+                type="tel"
                 name="phone"
-                class="email-input" 
+                class="email-input"
                 placeholder="Your phone number"
                 required
+                autocomplete="tel"
                 id="phoneInput"
             >
-            <textarea 
+            <label class="visually-hidden" for="messageInput">Describe your restoration needs</label>
+            <textarea
                 name="message"
-                class="message-input" 
+                class="message-input"
                 placeholder="Describe your restoration needs..."
                 rows="4"
                 required
                 id="messageInput"
             ></textarea>
-            <button type="submit" class="submit-btn">
+            <button type="submit" class="submit-btn" id="submitBtn">
                 <span>Get Free Quote</span>
             </button>
+            <p class="form-note">Emergency? Don't wait on a form — call <a href="tel:+14085284780" style="color: var(--accent-orange); text-decoration: none; font-weight: 700;">408.528.4780</a> now.</p>
         </form>
-        
-        <div class="success-message" id="successMessage">
+
+        <div class="success-message" id="successMessage" role="status">
             ✓ Thank you! We'll contact you shortly for your free quote.
+        </div>
+        <div class="error-message" id="errorMessage" role="alert">
+            Something went wrong sending your request. Please call us directly at 408.528.4780.
         </div>
 
         <div class="social-links">
-            <a href="https://instagram.com/rextoration" class="social-link" target="_blank" aria-label="Instagram">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <a href="https://instagram.com/rextoration" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Rextoration on Instagram">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
             </a>
-            <a href="https://facebook.com/rextoration" class="social-link" target="_blank" aria-label="Facebook">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <a href="https://facebook.com/rextoration" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Rextoration on Facebook">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
             </a>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Rextoration. All rights reserved.</p>
-        <p>Licensed, Insured & Certified | Serving the Bay Area</p>
-        <p style="margin-top: 1rem;">Website by <a href="https://derekfairfield.com" target="_blank">Derek Fairfield</a></p>
+        <p>&copy; 2026 Rextoration. All rights reserved.</p>
+        <p>Licensed, Insured &amp; Certified | Serving the Bay Area &amp; Central Valley</p>
+        <p style="margin-top: 1rem;">Website by <a href="https://derekfairfield.com" target="_blank" rel="noopener noreferrer">Derek Fairfield</a></p>
     </footer>
 
     <script>
-        // Create animated background particles
+        // Animated background particles (skipped for reduced-motion users)
         function createParticles() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             const particleBg = document.getElementById('particleBg');
             const particleCount = 30;
-            
+
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                
+
                 const size = Math.random() * 100 + 50;
                 particle.style.width = size + 'px';
                 particle.style.height = size + 'px';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
                 particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.background = Math.random() > 0.5 
+                particle.style.background = Math.random() > 0.5
                     ? 'radial-gradient(circle, rgba(43, 125, 233, 0.3), transparent)'
                     : 'radial-gradient(circle, rgba(127, 191, 63, 0.3), transparent)';
-                
+
                 particleBg.appendChild(particle);
             }
         }
-
-        // Initialize particles on load
         window.addEventListener('load', createParticles);
+
+        // AJAX form submit — inline success without leaving the page.
+        // Falls back to a normal POST (redirect to /thanks.html) if fetch fails or JS is off.
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.querySelector('span').textContent = 'Sending...';
+            successMessage.classList.remove('show');
+            errorMessage.classList.remove('show');
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/Oakdalebud81@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: new FormData(form)
+                });
+                if (!response.ok) throw new Error('Bad response');
+                form.reset();
+                successMessage.classList.add('show');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } catch (err) {
+                errorMessage.classList.add('show');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.querySelector('span').textContent = 'Get Free Quote';
+            }
+        });
     </script>
 </body>
-</html>      
+</html>
