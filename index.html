@@ -597,6 +597,77 @@
             line-height: 1.7;
         }
 
+        /* Story / mascot */
+        .story {
+            padding: 4rem 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .story-inner {
+            display: grid;
+            grid-template-columns: minmax(260px, 400px) 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .story-art {
+            margin: 0;
+        }
+
+        .story-art img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 53, 0.35);
+            box-shadow: 0 20px 70px rgba(255, 107, 53, 0.25), 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .story-art figcaption {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 0.9rem;
+        }
+
+        .story-copy h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        .story-copy p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+        }
+
+        .story-copy .story-tag {
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 860px) {
+            .story-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .story-art {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .story-copy {
+                text-align: center;
+            }
+        }
+
         /* Insurance band */
         .insurance {
             padding: 4rem 5%;
@@ -1243,6 +1314,22 @@
                 <div class="step-number" aria-hidden="true">4</div>
                 <h3>Restore &amp; Rebuild</h3>
                 <p>From mitigation through final repairs — we don't leave until it's right.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story / mascot -->
+    <section class="story" aria-labelledby="story-heading">
+        <div class="story-inner">
+            <figure class="story-art">
+                <img src="/images/mascot.jpg" alt="Rextoration mascot — a hero in a yellow hazmat suit and cape holding a moisture meter reading 99.9% inside a flooded, fire-damaged room" loading="lazy" width="460" height="576">
+                <figcaption>Disaster doesn't stand a chance</figcaption>
+            </figure>
+            <div class="story-copy">
+                <h2 id="story-heading">The Rextoration Story</h2>
+                <p>Established in 2012 in San Jose, California, Rextoration is a family-owned and operated company. Rex opened the doors with very little income and help — but with a huge heart and the desire to build the best.</p>
+                <p>Today, that same drive answers the phone 24/7 across the Bay Area and Central Valley: water, fire, smoke, mold, and flood recovery, working with all homeowners insurance from start to finish.</p>
+                <p class="story-tag">When you need it clean, call in the team.</p>
             </div>
         </div>
     </section>
