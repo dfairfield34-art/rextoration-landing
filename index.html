@@ -37,6 +37,7 @@
       "url": "https://rextoration.info/",
       "description": "24/7 emergency restoration company providing IICRC-certified fire, smoke, water and flood damage recovery with a 90-minute response time.",
       "telephone": "+1-408-528-4780",
+      "foundingDate": "2012",
       "priceRange": "Free quotes",
       "areaServed": [
         { "@type": "Place", "name": "San Francisco Bay Area" },
@@ -700,6 +701,156 @@
             line-height: 1.8;
         }
 
+        /* Reviews */
+        .reviews {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-summary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .reviews-summary .score {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .reviews-summary .stars {
+            color: var(--accent-orange);
+            font-size: 1.6rem;
+            letter-spacing: 3px;
+        }
+
+        .reviews-summary .meta {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .yelp-btn {
+            display: inline-block;
+            padding: 0.85rem 1.75rem;
+            border-radius: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.85rem;
+            color: #fff;
+            background: #D32323;
+            box-shadow: 0 8px 25px rgba(211, 35, 35, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .yelp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(211, 35, 35, 0.6);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            border-color: rgba(255, 107, 53, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .review-card .stars {
+            color: var(--accent-orange);
+            letter-spacing: 2px;
+            font-size: 1.05rem;
+        }
+
+        .review-card blockquote {
+            color: var(--text-secondary);
+            line-height: 1.75;
+            font-size: 0.98rem;
+            border: none;
+            flex-grow: 1;
+        }
+
+        .review-card cite {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .review-card cite span {
+            display: block;
+            font-weight: 400;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 4rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .gallery-grid figure {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0;
+            background: var(--card-bg);
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-grid figure:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-grid figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            background: linear-gradient(transparent, rgba(10, 14, 39, 0.92));
+            color: var(--text-primary);
+        }
+
         /* Quote Section */
         .signup-section {
             padding: 4rem 5% 5rem;
@@ -1013,6 +1164,7 @@
             <span class="trust-chip"><span class="dot" aria-hidden="true"></span>Licensed &amp; Insured</span>
             <span class="trust-chip"><span class="dot" aria-hidden="true"></span>90-Min Response</span>
             <span class="trust-chip"><span class="dot" aria-hidden="true"></span>Works With All Insurance</span>
+            <span class="trust-chip"><span class="dot" aria-hidden="true"></span>Family Owned Since 2012</span>
         </div>
 
         <div class="phone-cta">
@@ -1103,6 +1255,74 @@
             <div class="cta-row">
                 <a href="tel:+14085284780">Call Now — It's Free to Ask</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" aria-labelledby="reviews-heading">
+        <h2 class="section-heading" id="reviews-heading">What Customers Say</h2>
+        <p class="section-sub">Real reviews from real jobs — straight from Yelp.</p>
+
+        <div class="reviews-summary">
+            <span class="score">4.4</span>
+            <span class="stars" role="img" aria-label="4.4 out of 5 stars">★★★★½</span>
+            <span class="meta">7 reviews on Yelp</span>
+            <a class="yelp-btn" href="https://www.yelp.com/biz/rextoration-oakdale" target="_blank" rel="noopener noreferrer">Read All Reviews on Yelp</a>
+        </div>
+
+        <div class="reviews-grid">
+            <article class="review-card">
+                <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                <blockquote>"These guys were 'Johnny on the spot' when the leak in our house happened. Not only that, they were thorough, knowledgeable, fast, and professional. … They assured us we'd be ok in an extremely unsure time … I would highly recommend them to friends and family alike."</blockquote>
+                <cite>Andrea A. <span>Yelp review · April 2026</span></cite>
+            </article>
+            <article class="review-card">
+                <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                <blockquote>"I contacted Rex regarding sewage leak in the crawl space. Rex and his team handled the job quickly and efficiently. Rex was great at communicating with me throughout the process. I would highly recommend Rextoration to anyone with a similar situation."</blockquote>
+                <cite>Angela O. <span>Yelp review · April 2026</span></cite>
+            </article>
+            <article class="review-card">
+                <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                <blockquote>"Rex came out right away and gave us the best price out of 3 other company's. Also was such an easy process he got out claim number from our insurance and he took care of the rest took a lot of stress off of us! Highly recommend"</blockquote>
+                <cite>Erik S. <span>Yelp review · April 2026</span></cite>
+            </article>
+            <article class="review-card">
+                <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                <blockquote>"I have worked with Rextoration for over 10 years … Any time we need water damage services we recommend this company. They have always provided good service at a good value."</blockquote>
+                <cite>Kenny P. <span>Yelp review · April 2026</span></cite>
+            </article>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" aria-labelledby="gallery-heading">
+        <h2 class="section-heading" id="gallery-heading">On the Job</h2>
+        <p class="section-sub">The Rextoration fleet and crew at work — branded, equipped, and ready 24/7.</p>
+        <div class="gallery-grid">
+            <figure>
+                <img src="/images/van-wrap.jpg" alt="Rextoration branded emergency response van with 24/7 emergency services wrap" loading="lazy" width="675" height="1200">
+                <figcaption>The Rextoration response van</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/truck-wrap.jpg" alt="Rextoration branded pickup truck with company wrap and phone numbers" loading="lazy" width="1200" height="1200">
+                <figcaption>Wrapped and ready to roll</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/drying-system.jpg" alt="Rextoration branded structural drying tubes set up in a garage" loading="lazy" width="1200" height="1200">
+                <figcaption>Structural drying in progress</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/moisture-inspection.jpg" alt="Rextoration technician taking moisture readings on a wall" loading="lazy" width="1200" height="1200">
+                <figcaption>Moisture readings on every job</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/mitigation-work.jpg" alt="Water damage mitigation and demolition work inside a home" loading="lazy" width="1200" height="1200">
+                <figcaption>Mitigation done right</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/moisture-mapping.jpg" alt="Floor marked with moisture mapping indicators during water damage assessment" loading="lazy" width="1200" height="1200">
+                <figcaption>Mapping the damage before repairs</figcaption>
+            </figure>
         </div>
     </section>
 
