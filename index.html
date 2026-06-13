@@ -1803,22 +1803,17 @@
         document.body.classList.add('js');
 
         // Slide the sticky nav in once the hero scrolls out of view.
+        // Keep it inert (not keyboard-focusable) while off-screen so focus
+        // never jumps to a hidden bar.
         const siteNav = document.getElementById('siteNav');
-        let navTicking = false;
+        siteNav.inert = true;
         function updateNav() {
-            if (window.scrollY > 600) {
-                siteNav.classList.add('visible');
-            } else {
-                siteNav.classList.remove('visible');
-            }
-            navTicking = false;
+            const show = window.scrollY > 600;
+            siteNav.classList.toggle('visible', show);
+            siteNav.inert = !show;
         }
-        window.addEventListener('scroll', function () {
-            if (!navTicking) {
-                window.requestAnimationFrame(updateNav);
-                navTicking = true;
-            }
-        }, { passive: true });
+        window.addEventListener('scroll', updateNav, { passive: true });
+        updateNav();
 
         // Scroll-reveal sections via IntersectionObserver.
         const revealEls = document.querySelectorAll('.reveal');
