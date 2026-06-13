@@ -25,7 +25,13 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Icons & PWA -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Structured data: LocalBusiness -->
     <script type="application/ld+json">
@@ -157,6 +163,17 @@
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 5rem;
+        }
+
+        /* Visible keyboard focus everywhere (mouse clicks stay clean) */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        summary:focus-visible {
+            outline: 3px solid var(--accent-orange);
+            outline-offset: 3px;
+            border-radius: 4px;
         }
 
         /* Sticky scroll-in navigation */
