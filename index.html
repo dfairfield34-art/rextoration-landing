@@ -65,7 +65,8 @@
       },
       "sameAs": [
         "https://www.instagram.com/rextoration1",
-        "https://www.facebook.com/profile.php?id=61565360009561"
+        "https://www.facebook.com/profile.php?id=61565360009561",
+        "https://www.yelp.com/biz/rextoration-oakdale"
       ],
       "knowsAbout": ["Water damage restoration","Fire damage restoration","Smoke damage restoration","Flood recovery","Mold remediation","Sewage and biohazard cleanup","Emergency mitigation"],
       "hasOfferCatalog": {
@@ -1133,6 +1134,11 @@
             background: var(--card-bg);
         }
 
+        .gallery-grid picture,
+        .story-art picture {
+            display: block;
+        }
+
         .gallery-grid img {
             width: 100%;
             height: 280px;
@@ -1736,7 +1742,7 @@
     <section class="story reveal" aria-labelledby="story-heading">
         <div class="story-inner">
             <figure class="story-art">
-                <img src="/images/mascot.jpg" alt="Rextoration mascot — a hero in a yellow hazmat suit and cape holding a moisture meter reading 99.9% inside a flooded, fire-damaged room" loading="lazy" width="460" height="576">
+                <picture><source srcset="/images/mascot.webp" type="image/webp"><img src="/images/mascot.jpg" alt="Rextoration mascot — a hero in a yellow hazmat suit and cape holding a moisture meter reading 99.9% inside a flooded, fire-damaged room" loading="lazy" width="460" height="576"></picture>
                 <figcaption>Disaster doesn't stand a chance</figcaption>
             </figure>
             <div class="story-copy">
@@ -1801,39 +1807,39 @@
         <p class="section-sub">The Rextoration fleet and crew at work — branded, equipped, and ready 24/7.</p>
         <div class="gallery-grid">
             <figure>
-                <img src="/images/crew-branded.jpg" alt="Rextoration technician in branded company jacket working an emergency job" loading="lazy" width="1120" height="1400">
+                <picture><source srcset="/images/crew-branded.webp" type="image/webp"><img src="/images/crew-branded.jpg" alt="Rextoration technician in branded company jacket working an emergency job" loading="lazy" width="1120" height="1400"></picture>
                 <figcaption>Branded, certified, on the job</figcaption>
             </figure>
             <figure>
-                <img src="/images/van-wrap.jpg" alt="Rextoration branded emergency response van with 24/7 emergency services wrap" loading="lazy" width="675" height="1200">
+                <picture><source srcset="/images/van-wrap.webp" type="image/webp"><img src="/images/van-wrap.jpg" alt="Rextoration branded emergency response van with 24/7 emergency services wrap" loading="lazy" width="675" height="1200"></picture>
                 <figcaption>The Rextoration response van</figcaption>
             </figure>
             <figure>
-                <img src="/images/truck-wrap.jpg" alt="Rextoration branded pickup truck with company wrap and phone numbers" loading="lazy" width="1200" height="1200">
+                <picture><source srcset="/images/truck-wrap.webp" type="image/webp"><img src="/images/truck-wrap.jpg" alt="Rextoration branded pickup truck with company wrap and phone numbers" loading="lazy" width="1200" height="1200"></picture>
                 <figcaption>Wrapped and ready to roll</figcaption>
             </figure>
             <figure>
-                <img src="/images/drying-system.jpg" alt="Rextoration branded structural drying tubes set up in a garage" loading="lazy" width="1200" height="1200">
+                <picture><source srcset="/images/drying-system.webp" type="image/webp"><img src="/images/drying-system.jpg" alt="Rextoration branded structural drying tubes set up in a garage" loading="lazy" width="1200" height="1200"></picture>
                 <figcaption>Structural drying in progress</figcaption>
             </figure>
             <figure>
-                <img src="/images/moisture-inspection.jpg" alt="Rextoration technician taking moisture readings on a wall" loading="lazy" width="1200" height="1200">
+                <picture><source srcset="/images/moisture-inspection.webp" type="image/webp"><img src="/images/moisture-inspection.jpg" alt="Rextoration technician taking moisture readings on a wall" loading="lazy" width="1200" height="1200"></picture>
                 <figcaption>Moisture readings on every job</figcaption>
             </figure>
             <figure>
-                <img src="/images/mitigation-work.jpg" alt="Water damage mitigation and demolition work inside a home" loading="lazy" width="1200" height="1200">
+                <picture><source srcset="/images/mitigation-work.webp" type="image/webp"><img src="/images/mitigation-work.jpg" alt="Water damage mitigation and demolition work inside a home" loading="lazy" width="1200" height="1200"></picture>
                 <figcaption>Mitigation done right</figcaption>
             </figure>
             <figure>
-                <img src="/images/water-damage-crew.jpg" alt="Rextoration technician in branded shirt removing water-damaged flooring with an air mover running" loading="lazy" width="787" height="1400">
+                <picture><source srcset="/images/water-damage-crew.webp" type="image/webp"><img src="/images/water-damage-crew.jpg" alt="Rextoration technician in branded shirt removing water-damaged flooring with an air mover running" loading="lazy" width="787" height="1400"></picture>
                 <figcaption>Tearing out water damage</figcaption>
             </figure>
             <figure>
-                <img src="/images/contained-demo.jpg" alt="Drywall demolition debris bagged on protective containment plastic" loading="lazy" width="1120" height="1400">
+                <picture><source srcset="/images/contained-demo.webp" type="image/webp"><img src="/images/contained-demo.jpg" alt="Drywall demolition debris bagged on protective containment plastic" loading="lazy" width="1120" height="1400"></picture>
                 <figcaption>Clean, contained demolition</figcaption>
             </figure>
             <figure>
-                <img src="/images/moisture-mapping.jpg" alt="Floor marked with moisture mapping indicators during water damage assessment" loading="lazy" width="1200" height="1200">
+                <picture><source srcset="/images/moisture-mapping.webp" type="image/webp"><img src="/images/moisture-mapping.jpg" alt="Floor marked with moisture mapping indicators during water damage assessment" loading="lazy" width="1200" height="1200"></picture>
                 <figcaption>Mapping the damage before repairs</figcaption>
             </figure>
         </div>
@@ -2043,7 +2049,8 @@
             const photos = figures.map(function (fig) {
                 const img = fig.querySelector('img');
                 const cap = fig.querySelector('figcaption');
-                return { src: img.getAttribute('src'), alt: img.getAttribute('alt') || '', caption: cap ? cap.textContent : '' };
+                // Keep the element ref so we can read currentSrc (WebP) live at view time.
+                return { el: img, alt: img.getAttribute('alt') || '', caption: cap ? cap.textContent : '' };
             });
 
             const lightbox = document.getElementById('lightbox');
@@ -2058,7 +2065,7 @@
 
             function render() {
                 const p = photos[current];
-                lbImg.src = p.src;
+                lbImg.src = p.el.currentSrc || p.el.getAttribute('src');
                 lbImg.alt = p.alt;
                 lbCaption.textContent = p.caption;
                 lbCounter.textContent = (current + 1) + ' / ' + photos.length;
