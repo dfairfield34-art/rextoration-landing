@@ -25,9 +25,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet"></noscript>
 
     <!-- Icons & PWA -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -98,6 +98,11 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Can you work on older and historic buildings?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — it's some of our favorite work. Gold Rush-era brick buildings, Victorian homes, and older cabins need careful demolition and drying that protects original wood, plaster, and masonry. We restore what can be saved, rebuild what can't, and document everything for your insurance." }
+        },
+        {
+          "@type": "Question",
           "name": "What areas of the foothills do you serve?",
           "acceptedAnswer": { "@type": "Answer", "text": "We serve Sonora and the surrounding Gold Country foothills 24/7 — including Jamestown, Soulsbyville, Twain Harte, Columbia, Tuolumne, Mi-Wuk Village and Groveland in Tuolumne County, plus Angels Camp, Murphys and Arnold in Calaveras County, and down to Oakdale." }
         },
@@ -138,25 +143,37 @@
         }
 
         :root {
-            --primary-blue: #2B7DE9;
-            --bright-blue: #1E5FD9;
+            /* Gold Country palette — distinct from the main site's orange/blue */
+            --primary-blue: #3E6B4F;      /* sierra pine (replaces blue accents) */
+            --bright-blue: #2E5540;
             --green-wave: #7FBF3F;
-            --accent-orange: #FF6B35;
-            --accent-red: #E9452B;
-            --dark-bg: #0A0E27;
-            --card-bg: #1A1F3A;
-            --text-primary: #FFFFFF;
-            --text-secondary: #A8B2C7;
-            --gradient-start: #1A1F3A;
-            --gradient-end: #0A0E27;
+            --accent-orange: #E2A93D;     /* gold rush gold */
+            --accent-red: #B97722;        /* deep amber */
+            --dark-bg: #12100B;           /* aged-timber near-black */
+            --card-bg: #221D13;           /* dark sepia card */
+            --text-primary: #FFF9EE;      /* warm parchment white */
+            --text-secondary: #C9BBA0;    /* faded gold-grey */
+            --gradient-start: #241E12;
+            --gradient-end: #12100B;
+        }
+
+        h1, h2, .section-heading, .hero .tagline, .story-copy h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: 0.2px;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            background:
+                radial-gradient(1100px 600px at 15% -6%, rgba(226, 169, 61, 0.14), transparent 58%),
+                radial-gradient(1000px 680px at 110% 10%, rgba(62, 107, 79, 0.20), transparent 55%),
+                radial-gradient(900px 600px at 50% 115%, rgba(185, 119, 34, 0.10), transparent 60%),
+                linear-gradient(168deg, #241E12 0%, #16120C 55%, #0E0C08 100%);
+            background-attachment: fixed;
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         .visually-hidden {
@@ -847,6 +864,80 @@
         .service-card p {
             color: var(--text-secondary);
             line-height: 1.8;
+        }
+
+
+        /* Gold Country heritage section */
+        .heritage {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .heritage-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            line-height: 1.85;
+            max-width: 760px;
+            margin: 0 auto 3rem;
+        }
+
+        .heritage-intro em {
+            color: var(--accent-orange);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .heritage-card {
+            background: linear-gradient(170deg, rgba(226, 169, 61, 0.07), rgba(34, 29, 19, 0.9));
+            border: 1px solid rgba(226, 169, 61, 0.25);
+            border-radius: 18px;
+            padding: 2.25rem 2rem;
+            position: relative;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .heritage-card:hover {
+            border-color: rgba(226, 169, 61, 0.6);
+            transform: translateY(-6px);
+        }
+
+        .heritage-card .era {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent-orange);
+            border: 1px solid rgba(226, 169, 61, 0.4);
+            border-radius: 999px;
+            padding: 0.3rem 0.9rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .heritage-card h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+        }
+
+        .heritage-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.97rem;
+        }
+
+        .heritage-card p b {
+            color: var(--text-primary);
+            font-weight: 600;
         }
 
         /* Process Section */
@@ -1672,6 +1763,7 @@
         <a href="#main" class="nav-logo">REXTO<span>RATION</span></a>
         <ul class="nav-links">
             <li><a href="#services-heading">Services</a></li>
+            <li><a href="#heritage-heading">Historic</a></li>
             <li><a href="#story-heading">Our Story</a></li>
             <li><a href="#reviews-heading">Reviews</a></li>
             <li><a href="#areas-heading">Areas</a></li>
@@ -1705,7 +1797,7 @@
     <!-- Hero Section -->
     <main id="main">
     <section class="hero">
-        <h1>Mother Lode Disaster Recovery, Day or Night</h1>
+        <h1>Restoring the Gold Country, Day or Night</h1>
         <p class="subtitle">Sonora &amp; the Mother Lode &bull; IICRC Certified</p>
         <p class="tagline">When you need it clean, call in the team.</p>
 
@@ -1767,6 +1859,29 @@
                 <div class="service-icon" aria-hidden="true">🔧</div>
                 <h3>Complete Restoration</h3>
                 <p>Full-service restoration from emergency response through demolition, drying, drywall, and final repairs. Licensed, insured, and certified.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gold Country heritage -->
+    <section class="heritage reveal" aria-labelledby="heritage-heading">
+        <h2 class="section-heading" id="heritage-heading">This Country Was Built in 1850. We Keep It Standing.</h2>
+        <p class="heritage-intro">The Mother Lode isn't tract housing — it's <em>living history</em>. Brick storefronts from the Gold Rush, miners'-era Victorians, hand-built cabins under the pines. Old buildings mean old plumbing, old wiring, and old wood — and when water, fire, or mold gets into them, they deserve better than a tear-it-all-out crew. That's the work we love most.</p>
+        <div class="heritage-grid">
+            <div class="heritage-card">
+                <span class="era">Downtown &amp; Main Street</span>
+                <h3>Historic Storefronts &amp; Brick Buildings</h3>
+                <p>Sonora's Washington Street, Columbia, Jamestown — century-old brick and timber with aging pipes above and stone cellars below. When a line bursts over a shop or mold blooms in a basement, we do <b>careful, surgical demolition</b>, dry the structure without wrecking original material, and document everything for the insurance claim.</p>
+            </div>
+            <div class="heritage-card">
+                <span class="era">Victorian &amp; Mining-Era</span>
+                <h3>The Old Homes</h3>
+                <p>Plaster walls, true-dimension lumber, millwork you can't buy anymore. We treat older homes like they matter — <b>drying and restoring original wood and plaster where it can be saved</b>, cutting only what can't, and rebuilding so the repair belongs to the house.</p>
+            </div>
+            <div class="heritage-card">
+                <span class="era">Under the Pines</span>
+                <h3>Cabins &amp; Mountain Homes</h3>
+                <p>Twain Harte, Mi-Wuk, Arnold — cabins that sit empty for weeks while a pipe freezes or a roof leaks. We respond fast, <b>handle it while you're away</b>, work with your insurance, and get the place ready for the next season.</p>
             </div>
         </div>
     </section>
@@ -1964,6 +2079,10 @@
         <details>
             <summary>My cabin or second home flooded while I was away — can you help?</summary>
             <p>Yes — undetected leaks in vacation homes and cabins are one of the most common foothill jobs we handle. Call us and we can coordinate access, mitigate the damage, and keep you updated remotely throughout.</p>
+        </details>
+        <details>
+            <summary>Can you work on older and historic buildings?</summary>
+            <p>Yes — it's some of our favorite work. Gold Rush-era brick, Victorian plaster, true-dimension lumber: old structures need careful, surgical demolition and drying that protects the original material. We restore what can be saved, rebuild what can't, and document everything for your insurance.</p>
         </details>
         <details>
             <summary>Do you work with my insurance?</summary>

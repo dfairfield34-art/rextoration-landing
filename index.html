@@ -141,10 +141,17 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            background:
+                radial-gradient(1200px 620px at 12% -8%, rgba(43, 125, 233, 0.22), transparent 60%),
+                radial-gradient(1100px 720px at 112% 6%, rgba(255, 107, 53, 0.16), transparent 55%),
+                radial-gradient(900px 640px at 50% 118%, rgba(127, 191, 63, 0.10), transparent 60%),
+                linear-gradient(165deg, #131732 0%, #0A0E27 58%, #070A1C 100%);
+            background-attachment: fixed;
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
         .visually-hidden {
