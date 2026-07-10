@@ -604,37 +604,73 @@
             margin: 0 auto;
         }
 
+        /* Emergency alert bar (Gold Country) */
+        .alert-bar {
+            position: relative; z-index: 20;
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.55rem; flex-wrap: wrap; padding: 0.6rem 1rem;
+            background: linear-gradient(90deg, rgba(185,119,34,0.18), rgba(226,169,61,0.14), rgba(185,119,34,0.18));
+            border-bottom: 1px solid rgba(226,169,61,0.42);
+            color: #FFF9EE; text-decoration: none;
+            font-size: 0.82rem; font-weight: 600; letter-spacing: 0.4px;
+        }
+        .alert-bar strong { text-transform: uppercase; letter-spacing: 1.4px; }
+        .alert-bar .num { color: var(--accent-orange); font-weight: 800; }
+        .alert-bar:hover .num { text-decoration: underline; }
+
+        .pulse-dot {
+            width: 9px; height: 9px; border-radius: 50%;
+            background: #ff5a3d; flex-shrink: 0;
+            box-shadow: 0 0 0 0 rgba(255,90,61,0.7);
+            animation: pulseDot 1.8s infinite;
+        }
+        @keyframes pulseDot {
+            0% { box-shadow: 0 0 0 0 rgba(255,90,61,0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255,90,61,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,90,61,0); }
+        }
+
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 0.55rem;
+            font-size: clamp(0.8rem, 1.6vw, 1rem);
+            font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--accent-orange); margin-bottom: 1.4rem;
+            animation: heroPop 0.6s ease-out both;
+        }
+
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 300;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: rgba(255, 255, 255, 0.95);
-            letter-spacing: 1px;
-            animation: fadeInUp 0.8s ease-out;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.4rem, 8vw, 5.6rem);
+            font-weight: 800; line-height: 1.0;
+            letter-spacing: 0.5px; text-transform: uppercase;
+            margin-bottom: 1.4rem; color: #FFF9EE;
+            text-shadow: 0 8px 44px rgba(0,0,0,0.55);
+            overflow-wrap: break-word;
+            animation: heroPop 0.7s cubic-bezier(0.16,1,0.3,1) 0.05s both;
+        }
+        .hero h1 .fire {
+            background: linear-gradient(100deg, var(--accent-orange) 0%, var(--accent-red) 60%, #F0C46A 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            filter: drop-shadow(0 6px 26px rgba(226,169,61,0.4));
         }
 
         .hero .subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
+            font-size: clamp(1rem, 2.2vw, 1.35rem);
+            color: var(--text-primary); margin-bottom: 0.55rem;
+            font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+            animation: heroPop 0.7s ease-out 0.18s both;
         }
 
         .hero .tagline {
-            font-size: clamp(1.3rem, 3vw, 2rem);
-            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-red) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 600;
-            font-style: italic;
-            margin-bottom: 3rem;
-            letter-spacing: 0.5px;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
+            font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+            color: var(--text-secondary); font-weight: 500;
+            margin-bottom: 3rem; letter-spacing: 0.3px;
+            animation: heroPop 0.7s ease-out 0.3s both;
+        }
+
+        @keyframes heroPop {
+            from { opacity: 0; transform: translateY(26px) scale(0.985); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         @keyframes fadeInUp {
@@ -1729,7 +1765,17 @@
             }
 
             .hero {
-                padding: 3rem 5% 3rem;
+                padding: 2.5rem 5% 3rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.9rem, 10.5vw, 3.2rem);
+                letter-spacing: 0.5px;
+            }
+
+            .alert-bar {
+                font-size: 0.74rem;
+                padding: 0.55rem 0.9rem;
             }
 
             .phone-cta {
@@ -1757,6 +1803,13 @@
 </head>
 <body>
     <a class="skip-link" href="#quote">Skip to free quote form</a>
+
+    <!-- Emergency alert bar -->
+    <a class="alert-bar" href="tel:+12095426261">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <strong>24/7 Emergency Line Open</strong>
+        <span>&mdash; Sonora &amp; the foothills. Tap to call <span class="num">209.542.6261</span></span>
+    </a>
 
     <!-- Sticky navigation (slides in on scroll) -->
     <nav class="site-nav" id="siteNav" aria-label="Primary">
@@ -1797,9 +1850,10 @@
     <!-- Hero Section -->
     <main id="main">
     <section class="hero">
-        <h1>Restoring the Gold Country, Day or Night</h1>
-        <p class="subtitle">Sonora &amp; the Mother Lode &bull; IICRC Certified</p>
-        <p class="tagline">When you need it clean, call in the team.</p>
+        <p class="hero-eyebrow"><span class="pulse-dot" aria-hidden="true"></span>Sonora &middot; Tuolumne &middot; Calaveras County</p>
+        <h1>Gold Country Doesn't Wait.<br><span class="fire">Neither Do We.</span></h1>
+        <p class="subtitle">Water &middot; Fire &middot; Smoke &middot; Flood &mdash; IICRC Certified</p>
+        <p class="tagline">On-site in 90 minutes. Every hour. Every day.</p>
 
         <div class="trust-chips">
             <span class="trust-chip"><span class="dot" aria-hidden="true"></span>IICRC Certified</span>
