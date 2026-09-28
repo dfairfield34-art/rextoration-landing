@@ -63,7 +63,27 @@
     details.faq summary::after { content: "+"; font-family: var(--font-heading); font-size: 24px; color: var(--color-accent); transition: transform .3s; flex-shrink: 0; }
     details.faq[open] summary::after { transform: rotate(45deg); }
     details.faq summary:hover h3 { color: var(--color-accent-600); }
-    @media (max-width: 860px) { #hero-art { display: none; } }
+    @media (max-width: 860px) {
+      /* Hide the mascot art AND collapse the hero to one column. Hiding the art
+         with display:none does not remove its grid track — the empty
+         minmax(260px,5fr) track keeps reserving 260px and starves the headline
+         column. Forcing a single track is what actually fixes the hero. */
+      #hero-art { display: none; }
+      #hero-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 720px) {
+      /* Belt-and-suspenders against the many absolutely-positioned decorations. */
+      html, body { overflow-x: hidden; }
+      /* The nav is a no-wrap flex row (brand + 5 links + Call button) with no
+         hamburger. On phones, drop the in-page anchor links and keep the two
+         things that matter: the brand and the 24/7 Call CTA. */
+      nav.nav a[href^="#"] { display: none; }
+      /* Story is a hard 2-column grid; stack copy over the crew photo. */
+      #story { grid-template-columns: 1fr !important; }
+      /* The spinning cross decoration lands over the headline once the hero is
+         single-column and taller; hide it on phones for legibility. */
+      #hero-cross { display: none; }
+    }
   </style>
     <script type="application/ld+json">
     {
@@ -164,14 +184,14 @@
 </nav>
 <section style="position: relative; overflow: hidden;">
   <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; opacity: 0.45; background: repeating-linear-gradient(to right, var(--color-divider) 0 1px, transparent 1px 96px), repeating-linear-gradient(to bottom, var(--color-divider) 0 1px, transparent 1px 96px); animation: gridPan 40s linear infinite;"></div>
-  <div aria-hidden="true" style="position: absolute; top: 16%; right: 7%; width: 240px; height: 240px; pointer-events: none; animation: crossSpin 90s linear infinite; color: color-mix(in srgb, var(--color-accent) 45%, transparent);">
+  <div id="hero-cross" aria-hidden="true" style="position: absolute; top: 16%; right: 7%; width: 240px; height: 240px; pointer-events: none; animation: crossSpin 90s linear infinite; color: color-mix(in srgb, var(--color-accent) 45%, transparent);">
     <span style="position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: currentColor;"></span>
     <span style="position: absolute; top: 50%; left: 0; height: 1px; width: 100%; background: currentColor;"></span>
     <span style="position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; border: 1px solid currentColor; transform: translate(-50%, -50%);"></span>
   </div>
   <div aria-hidden="true" style="position: absolute; top: -10%; right: -8%; width: 60%; height: 120%; pointer-events: none; background: radial-gradient(closest-side, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 70%); animation: glowDrift 12s ease-in-out infinite;"></div>
   <div aria-hidden="true" style="position: absolute; bottom: -20%; right: 22%; width: 40%; height: 80%; pointer-events: none; background: radial-gradient(closest-side, color-mix(in srgb, #35C7D9 10%, transparent), transparent 70%); animation: glowDrift 16s ease-in-out infinite reverse;"></div>
-  <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 10vh, 112px) clamp(20px, 5vw, 72px) 84px; position: relative; display: grid; grid-template-columns: minmax(0, 7fr) minmax(260px, 5fr); gap: 48px clamp(32px, 5vw, 80px); align-items: center;">
+  <div id="hero-grid" style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 10vh, 112px) clamp(20px, 5vw, 72px) 84px; position: relative; display: grid; grid-template-columns: minmax(0, 7fr) minmax(260px, 5fr); gap: 48px clamp(32px, 5vw, 80px); align-items: center;">
     <div>
       <div style="display: flex; align-items: center; gap: 20px; margin: 0 0 32px; animation: fadeUp .8s cubic-bezier(.22,1,.36,1) both;">
         <span class="blueprint" style="display: block; background: #fff; padding: 6px; flex-shrink: 0;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><img src="/images/rex-logo.png" alt="Rextoration — 24/7 emergency services, water removal specialist" style="display: block; width: 92px; height: auto;"></span>
