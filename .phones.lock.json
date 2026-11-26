@@ -1,0 +1,7 @@
+{
+  "_readme": "Written by scripts/sync-phones.mjs. Do not edit by hand.",
+  "phones": {
+    "bayArea": "408-528-4780",
+    "centralValley": "209-542-6261"
+  }
+}
