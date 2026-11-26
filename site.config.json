@@ -1,0 +1,7 @@
+{
+  "_readme": "Phone numbers for the whole site. Change a number here, then run: node scripts/sync-phones.mjs",
+  "phones": {
+    "bayArea": "408-528-4780",
+    "centralValley": "209-542-6261"
+  }
+}
